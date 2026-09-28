@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap');
+body { font-family: 'Tajawal', sans-serif; background: linear-gradient(180deg,#eef2ff 0%,#fefce8 100%); background-attachment: fixed; user-select: none; overflow-x: hidden; }
+.glass-panel { background: rgba(255,255,255,0.93); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10); }
+.btn-bounce { transition: transform 0.2s; }
+.btn-bounce:active { transform: scale(0.95); }
+.brand-strip { background: repeating-linear-gradient(90deg,#facc15 0 40px,#1e3a8a 40px 80px); height: 4px; }
+
+/* رياضيات */
+.m { unicode-bidi: isolate; direction: ltr; }
+.frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; line-height: 1.1; margin: 0 2px; font-size: 0.9em; }
+.frac .num { border-bottom: 2px solid currentColor; padding: 0 3px; }
+.frac .den { padding: 0 3px; }
+.q-img { max-height: 260px; max-width: 100%; margin: 0 auto 1rem; border-radius: 12px; border: 2px solid #e0e7ff; background: #fff; object-fit: contain; }
+.q-img-sm { max-height: 150px; max-width: 100%; margin: 8px auto 0; border-radius: 10px; background: #fff; object-fit: contain; }
+
+/* التوصيل */
+.match-item { transition: all 0.3s; }
+.match-item.selected { background-color: #fef08a; border-color: #eab308; transform: scale(1.05); }
+.match-item.matched { background-color: #86efac; border-color: #22c55e; opacity: 0.7; pointer-events: none; }
+.match-item.error { background-color: #fca5a5; border-color: #ef4444; animation: shake 0.5s; }
+
+/* الفقاعات */
+.game-bubble {
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(191,219,254,0.8) 60%, rgba(59,130,246,0.45));
+    box-shadow: inset 0 0 15px rgba(255,255,255,0.8), 0 4px 10px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #1e3a8a; text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+.horizontal-target { background-color: white; border: 4px solid; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2); }
+
+/* حركة مستمرة بلا وقت محدد: تتكرر حتى يجيب الطالب */
+@keyframes fallDown { from { top: -140px; } to { top: 105%; } }
+@keyframes moveRight { from { left: -140px; } to { left: 105%; } }
+@keyframes moveLeft { from { left: 105%; } to { left: -140px; } }
+.anim-fall { animation: fallDown 16s linear infinite; }
+.anim-right { animation: moveRight 15s linear infinite; }
+.anim-left { animation: moveLeft 15s linear infinite; }
+
+@keyframes shake { 0%,100% {transform: translateX(0);} 25% {transform: translateX(-5px);} 75% {transform: translateX(5px);} }
+.popup-anim { animation: popIn 0.3s ease-out forwards; }
+@keyframes popIn { 0% { opacity: 0; transform: scale(0.5); } 100% { opacity: 1; transform: scale(1); } }
+.game-bubble .frac, .horizontal-target .frac { font-size: 1.3em; }
+.game-bubble .m, .horizontal-target .m { white-space: normal; }
+
+/* رموز الشعاع والمستقيم */
+.geo { position: relative; display: inline-block; padding-top: 0.45em; line-height: 1.1; unicode-bidi: isolate; }
+.geo::before { position: absolute; top: -0.15em; left: 0; right: 0; text-align: center; font-size: 0.8em; line-height: 1; letter-spacing: -2px; }
+.ray::before { content: "⟶"; }
+.gline::before { content: "⟷"; }
